@@ -149,11 +149,18 @@ import Link from 'next/link';
                 </HoverCard.Dropdown>
               </HoverCard> */}
               <Link href="#" className={classes.link}>
-                Learn
+                About Us
               </Link>
               <Link href="#" className={classes.link}>
-                Academy
+                Events
               </Link>
+
+              <Link href="#" className={classes.link}>
+                Create Tournament
+              </Link>
+              {/* write code for stylish background in classname */}
+
+              
             </Group>
               <Button variant="default" className='text-white' >Log in</Button>
               <Button className='bg-blue-500'>Sign up</Button>
@@ -191,10 +198,13 @@ import Link from 'next/link';
             </UnstyledButton>
             <Collapse in={linksOpened}>{links}</Collapse>
             <Link href="#" className={classes.link}>
-              Learn
+              About Us
             </Link>
             <Link href="#" className={classes.link}>
-              Academy
+              Events
+            </Link>
+            <Link href="#" className={classes.link}>
+              Create Tournament
             </Link>
   
             <Divider my="sm" />
