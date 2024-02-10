@@ -2,7 +2,7 @@ import React from 'react'
 
 const NavbarSpace = () => {
   return (
-    <div className='pt-[74px]'/>
+    <div className='pt-[90px]'/>
   )
 }
 
