@@ -95,7 +95,7 @@ import HoverButton from '../HoverButton/HoverButton';
     ));
   
     return (
-      <Box pb={3}>
+      <Box pb={10}>
         <header className={classes.header}>
           <Group justify="space-between" h="100%">
             {/* <Esport size={30} /> */}

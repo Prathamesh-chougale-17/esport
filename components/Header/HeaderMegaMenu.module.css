@@ -6,6 +6,7 @@
     background-color: #1E1E1E;
     position: fixed;
     width: 100%;
+    z-index: 1000;
   }
   
   .link {
