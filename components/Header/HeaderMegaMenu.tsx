@@ -178,7 +178,7 @@ import Link from 'next/link';
           title="Navigation"
           hiddenFrom="sm"
           zIndex={1000000}
-          color='black'
+          className='bg-black'
         >
           <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
             <Divider my="sm" />
