@@ -155,8 +155,8 @@ import Link from 'next/link';
                 Academy
               </Link>
             </Group>
-              <Button variant="default">Log in</Button>
-              <Button>Sign up</Button>
+              <Button variant="default" >Log in</Button>
+              <Button className='bg-blue-500'>Sign up</Button>
             </Group>
   
             <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
@@ -201,7 +201,7 @@ import Link from 'next/link';
   
             <Group justify="center" grow pb="xl" px="md">
               <Button variant="default">Log in</Button>
-              <Button>Sign up</Button>
+              <Button className='bg-blue-500'>Sign up</Button>
             </Group>
           </ScrollArea>
         </Drawer>
