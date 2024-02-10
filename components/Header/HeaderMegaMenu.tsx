@@ -160,13 +160,13 @@ import Link from 'next/link';
               </Link>
               {/* write code for stylish background in classname */}
 
-              
+
             </Group>
               <Button variant="default" className='text-white' >Log in</Button>
               <Button className='bg-blue-500'>Sign up</Button>
             </Group>
   
-            <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
+            <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm"  className='text-white'/>
           </Group>
         </header>
   
