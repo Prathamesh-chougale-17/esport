@@ -166,7 +166,7 @@ import Link from 'next/link';
               <Button className='bg-blue-500'>Sign up</Button>
             </Group>
   
-            <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm"  className='bg-white'/>
+            <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm"  />
           </Group>
         </header>
   
