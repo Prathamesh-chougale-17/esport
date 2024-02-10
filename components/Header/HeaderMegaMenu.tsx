@@ -17,6 +17,8 @@ import {
     ScrollArea,
     rem,
     useMantineTheme,
+    Menu,
+    Avatar,
   } from '@mantine/core';
 //   import { Esport } from '@mantinex/mantine-logo';
 import Esport from '@/public/android-chrome-192x192.png'
@@ -35,65 +37,15 @@ import Image from 'next/image';
 import React from 'react';
 import Link from 'next/link';
 import HoverButton from '../HoverButton/HoverButton';
-  
-  const mockdata = [
-    {
-      icon: IconCode,
-      title: 'Open source',
-      description: 'This Pokémon’s cry is very loud and distracting',
-    },
-    {
-      icon: IconCoin,
-      title: 'Free for everyone',
-      description: 'The fluid of Smeargle’s tail secretions changes',
-    },
-    {
-      icon: IconBook,
-      title: 'Documentation',
-      description: 'Yanma is capable of seeing 360 degrees without',
-    },
-    {
-      icon: IconFingerprint,
-      title: 'Security',
-      description: 'The shell’s rounded shape and the grooves on its.',
-    },
-    {
-      icon: IconChartPie3,
-      title: 'Analytics',
-      description: 'This Pokémon uses its flying ability to quickly chase',
-    },
-    {
-      icon: IconNotification,
-      title: 'Notifications',
-      description: 'Combusken battles with the intensely hot flames it spews',
-    },
-  ];
-  
+import { useSession } from 'next-auth/react';
   export function HeaderMegaMenu() {
     const [drawerOpened,isDrawerOpened] = React.useState(false);
     const toggleDrawer = () => isDrawerOpened(!drawerOpened);
     const closeDrawer = () => isDrawerOpened(false);
     const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
     const theme = useMantineTheme();
-  
-    const links = mockdata.map((item) => (
-      <UnstyledButton className={classes.subLink} key={item.title}>
-        <Group wrap="nowrap" align="flex-start">
-          <ThemeIcon size={34} variant="default" radius="md">
-            <item.icon style={{ width: rem(22), height: rem(22) }} color={theme.colors.blue[6]} />
-          </ThemeIcon>
-          <div>
-            <Text size="sm" fw={500}>
-              {item.title}
-            </Text>
-            <Text size="xs" c="dimmed">
-              {item.description}
-            </Text>
-          </div>
-        </Group>
-      </UnstyledButton>
-    ));
-  
+    const { status, data: session } = useSession();
+    const image = session?.user?.image;
     return (
       <Box pb={10}>
         <header className={classes.header}>
@@ -119,7 +71,17 @@ import HoverButton from '../HoverButton/HoverButton';
 
 
             </Group>
-            <HoverButton/>
+            {status === 'authenticated'?  <Menu>
+                <Menu.Target>
+                  <Avatar src={image} className={classes.Avatar} />
+                </Menu.Target>
+                <Menu.Dropdown>
+                  <Link href="/api/auth/signout">
+                    <Button>Sign out</Button>
+                  </Link>
+                </Menu.Dropdown>
+              </Menu>:<HoverButton/>}
+            {/* <HoverButton/> */}
             </Group>
   
             <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm"  />
@@ -153,7 +115,7 @@ import HoverButton from '../HoverButton/HoverButton';
                 />
               </Center>
             </UnstyledButton>
-            <Collapse in={linksOpened}>{links}</Collapse>
+            {/* <Collapse in={linksOpened}>{links}</Collapse> */}
             <Link href="#" className={classes.link}>
               About Us
             </Link>
