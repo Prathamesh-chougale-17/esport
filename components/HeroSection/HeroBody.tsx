@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import HeroImage from '@/public/esportsgif.gif'
+import HeroImage from '@/public/valo.gif'
 
 
 const HeroBody = () => {
