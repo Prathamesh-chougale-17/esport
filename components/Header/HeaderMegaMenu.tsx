@@ -155,7 +155,7 @@ import Link from 'next/link';
                 Academy
               </Link>
             </Group>
-              <Button variant="default" >Log in</Button>
+              <Button variant="default" className='text-white' >Log in</Button>
               <Button className='bg-blue-500'>Sign up</Button>
             </Group>
   

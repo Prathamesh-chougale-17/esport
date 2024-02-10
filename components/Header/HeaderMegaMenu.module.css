@@ -16,6 +16,7 @@
     color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
     font-weight: 500;
     font-size: var(--mantine-font-size-lg);
+    color: white;
     
   
     @media (max-width: $mantine-breakpoint-sm) {
