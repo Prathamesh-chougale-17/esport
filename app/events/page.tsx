@@ -19,7 +19,8 @@ const EventsPage =async () => {
         )
       ) : (
         <div>No Games found</div>
-      )}</div>
+      )}
+      </div>
   )
 }
 
