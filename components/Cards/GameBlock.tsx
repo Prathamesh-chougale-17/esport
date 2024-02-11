@@ -16,7 +16,7 @@ const GameBlock: React.FC<GameBlockProps> = ({
   return (
     <div className="game-block bg-gray-800 border border-gray-700 p-4 flex justify-between items-center rounded-md shadow-md hover:bg-gray-700 my-6 mx-4">
       <div className="text-lg font-semibold text-white flex items-center">
-        <Image src={logo} alt="game" width={100} height={100} />
+        <Image src={logo} alt="game" width={60} height={60} />
         <span className="ml-4">{gameName}</span>
       </div>
       <div className="text-lg text-gray-400">

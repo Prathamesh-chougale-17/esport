@@ -14,7 +14,7 @@ const TournamentPage = async ({
   const tournaments = await getTournament();
   return (
     <main className="bg-black">
-      <div className="h-[400px]">
+      <div className="h-[400px]  mb-32">
         <Image
           src={games.image}
           alt="GamesImages"
