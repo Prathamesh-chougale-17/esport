@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getGamesBySlug, getTournamentBySlug } from "@/sanity/sanity-util";
 import EventsInfo from "@/components/Cards/EventsInfo";
 import CountDownFile from "@/components/CountDown/CountDown";
+import Link from "next/link";
 const EventInfo = async ({ params }: { params: { eventinfo: string } }) => {
   const tournaments = await getTournamentBySlug(params.eventinfo);
   const games = await getGamesBySlug(tournaments.gametype);
@@ -25,9 +26,11 @@ const EventInfo = async ({ params }: { params: { eventinfo: string } }) => {
           <h1 className="text-2xl justify-end">
             Start In: <CountDownFile timer={tournaments.countdown} />
           </h1>
-          <button className="bg-green-500 text-white py-3 px-6 rounded-md mt-2">
-            Register
-          </button>
+          <Link href={`${tournaments.event}/registration`}>
+            <button className="bg-green-500 text-white py-3 px-6 rounded-md mt-2">
+              Register
+            </button>
+          </Link>
         </div>
       </section>
       <section className="pb-20">

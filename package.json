@@ -24,7 +24,10 @@
     "react": "^18",
     "react-countdown": "^2.3.5",
     "react-dom": "^18",
-    "react-tilt": "^1.0.2"
+    "react-hook-form": "^7.50.1",
+    "react-tilt": "^1.0.2",
+    "sonner": "^1.4.0",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",

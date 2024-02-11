@@ -21,17 +21,8 @@ const UserformSchema = new mongoose.Schema(
         gender: {
             type: String,
         },
-        address: {
+        twitchChannelId: {
             type: String,
-        },
-        feedback: {
-            type: String,
-        },
-        satisfaction: {
-            type: String,
-        },
-        rating: {
-            type: Number,
         },
     },
     { timestamps: true },
