@@ -22,6 +22,7 @@
     "next-sanity": "^7.1.4",
     "query-string": "^8.2.0",
     "react": "^18",
+    "react-countdown": "^2.3.5",
     "react-dom": "^18",
     "react-tilt": "^1.0.2"
   },
