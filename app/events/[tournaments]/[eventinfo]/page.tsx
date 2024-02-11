@@ -3,7 +3,6 @@ import Image from "next/image";
 import { getGamesBySlug, getTournamentBySlug } from "@/sanity/sanity-util";
 import EventsInfo from "@/components/Cards/EventsInfo";
 import CountDownFile from "@/components/CountDown/CountDown";
-import { Button } from "@mantine/core";
 const EventInfo = async ({ params }: { params: { eventinfo: string } }) => {
   const tournaments = await getTournamentBySlug(params.eventinfo);
   const games = await getGamesBySlug(tournaments.gametype);
@@ -26,9 +25,9 @@ const EventInfo = async ({ params }: { params: { eventinfo: string } }) => {
           <h1 className="text-2xl justify-end">
             Start In: <CountDownFile timer={tournaments.countdown} />
           </h1>
-          <Button color="teal" size="lg" className="mt-3">
+          <button className="bg-green-500 text-white py-3 px-6 rounded-md mt-2">
             Register
-          </Button>
+          </button>
         </div>
       </section>
       <section className="pb-20">
