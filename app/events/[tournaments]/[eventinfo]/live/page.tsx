@@ -1,30 +1,37 @@
 import React from "react";
-
+import VideoBorder from "./VideoBackground.module.css";
 const TournamentsPage = () => {
   return (
-    <main className="bg-black lg:flex text-2xl  justify-evenly">
+    <main className="bg-black  lg:flex text-2xl  justify-evenly">
       <div>
         <div className="pt-4">
           <h1 className="text-violet-700">Prathamesh Chougale</h1>
         </div>
-        <iframe
-          src="https://player.twitch.tv/?channel=shyam2173&parent=esport-nexus.vercel.app"
-          scrolling="no"
-          height="378"
-          width="620"
-        ></iframe>
+        <div className="relative inset-0">
+          <div className={VideoBorder.block} />
+          <iframe
+            src="https://player.twitch.tv/?channel=shyam2173&parent=esport-nexus.vercel.app"
+            scrolling="no"
+            height="378"
+            width="620"
+            className="z-10 absolute inset-0"
+          ></iframe>
+        </div>
       </div>
       <div>
         <div className="pt-4">
           <h1 className="text-violet-700">Ronak Dagale</h1>
         </div>
-
-        <iframe
-          src="https://player.twitch.tv/?channel=shyam2173&parent=esport-nexus.vercel.app"
-          scrolling="no"
-          height="378"
-          width="620"
-        ></iframe>
+        <div className="relative inset-0">
+          <div className={VideoBorder.block} />
+          <iframe
+            src="https://player.twitch.tv/?channel=shyam2173&parent=esport-nexus.vercel.app"
+            scrolling="no"
+            height="378"
+            width="620"
+            className="z-10 absolute inset-0"
+          ></iframe>
+        </div>
       </div>
     </main>
   );
