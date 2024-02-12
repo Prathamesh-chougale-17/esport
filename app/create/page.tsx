@@ -5,16 +5,18 @@ import { createFormContext } from "@mantine/form";
 import { SubmitHandler } from "react-hook-form";
 import { Toaster } from "sonner";
 // import { useForm } from "@mantine/form";
-export interface FormSubmittion {
-  fullName: string;
-  email: string;
-  age: number;
-  gender: string;
-  phoneNumber: string;
-  twitchChannelId: string;
+export interface EventSchema {
+  eventname: string;
+  startdate: string;
+  player: number;
+  prizepool: string;
+  organisationName: string;
+  participationfee: string;
+  location: string;
+  gamedata: string;
 }
 const [FormProvider, useFormContext, useForm] =
-  createFormContext<FormSubmittion>();
+  createFormContext<EventSchema>();
 
 function ContextField() {
   const form = useFormContext();
@@ -42,7 +44,7 @@ function ContextField() {
       />
       <TextInput
         label="Enter your Pize Poll"
-        placeholder="Phone Number"
+        placeholder="Prize Poll"
         withAsterisk
         mt="md"
         {...form.getInputProps("prizepool")}
@@ -90,6 +92,7 @@ function ContextField() {
           "fifa-23",
         ]}
         searchable
+        {...form.getInputProps("gamedata")}
       />
 
       {/* <Group justify="flex-start" mt="md"> */}
@@ -101,9 +104,9 @@ function ContextField() {
   );
 }
 
-// export type FormSubmittion = z.infer<typeof FormSubmissionSchema>;
+// export type EventSchema = z.infer<typeof FormSubmissionSchema>;
 const FeedbackForm = () => {
-  const processForm: SubmitHandler<FormSubmittion> = async (data) => {
+  const processForm: SubmitHandler<EventSchema> = async (data) => {
     console.log(data);
     // console.log(Responseconsole.log(Sendmessage)
   };
@@ -112,28 +115,67 @@ const FeedbackForm = () => {
 
   const form = useForm({
     initialValues: {
-      fullName: "",
-      email: "",
-      phoneNumber: "",
-      gender: "",
-      age: 0,
-      twitchChannelId: "",
+      eventname: "",
+      startdate: "",
+      player: 0,
+      prizepool: "",
+      organisationName: "",
+      participationfee: "",
+      location: "",
+      gamedata: "",
     },
     validate: {
-      fullName: (value) =>
-        value.length < 2 ? "Name must have at least 2 letters" : null,
-      email: (value) => (/^\S+@\S+$/.test(value) ? null : "Invalid email"),
-      age: (value) =>
-        value < 18 ? "You must be at least 18 to register" : null,
-      phoneNumber: (value) =>
-        value.length === 10 ? null : "Phone number must have 10 digits",
-      gender: (value) =>
-        value.length < 4 ? "Please select your Gender" : null,
-      // address: (value) => (value.length < 10 ? 'Address must have at least 10 letters' : null),
-      twitchChannelId: (value) =>
-        value.length < 3
-          ? "Twitch Channel Id must have at least 3 letters"
-          : null,
+      eventname: (value) => {
+        if (!value) {
+          return "Event Name is required";
+        }
+        return true;
+      },
+      startdate: (value) => {
+        if (!value) {
+          return "Start Date is required";
+        }
+        return true;
+      },
+      player: (value) => {
+        if (!value) {
+          return "Number of Players is required";
+        }
+        if (isNaN(value)) {
+          return "Number of Players must be a valid number";
+        }
+        return true;
+      },
+      prizepool: (value) => {
+        if (!value) {
+          return "Prize Pool is required";
+        }
+        return true;
+      },
+      organisationName: (value) => {
+        if (!value) {
+          return "Organisation Name is required";
+        }
+        return true;
+      },
+      participationfee: (value) => {
+        if (!value) {
+          return "Participation Fee is required";
+        }
+        return true;
+      },
+      location: (value) => {
+        if (!value) {
+          return "Location is required";
+        }
+        return true;
+      },
+      gamedata: (value) => {
+        if (!value) {
+          return "Game Domain is required";
+        }
+        return true;
+      },
     },
   });
 
