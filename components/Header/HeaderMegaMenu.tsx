@@ -39,9 +39,6 @@ export function HeaderMegaMenu() {
               <Link href="/" className={classes.link}>
                 Home
               </Link>
-              <Link href="/aboutus" className={classes.link}>
-                About Us
-              </Link>
               <Link href="/events" className={classes.link}>
                 Events
               </Link>
@@ -92,9 +89,6 @@ export function HeaderMegaMenu() {
           <Link href="/" className={classes.link}>
             Home
           </Link>
-          <Link href="/aboutus" className={classes.link}>
-            About Us
-          </Link>
           <Link href="/events" className={classes.link}>
             Events
           </Link>
@@ -105,7 +99,9 @@ export function HeaderMegaMenu() {
           <Divider my="sm" />
 
           <Group justify="center" grow pb="xl" px="md">
-            <Button className="bg-blue-500">Sign up</Button>
+            <Link href="/api/auth/signup">
+              <Button className="bg-blue-500">Sign up</Button>
+            </Link>
           </Group>
         </ScrollArea>
       </Drawer>
