@@ -1,9 +1,9 @@
 "use client";
-import { Button, Group, TextInput, Radio } from "@mantine/core";
+import { Button, TextInput, Select } from "@mantine/core";
 // import { SubmitHandler, useForm } from "react-hook-form";
 import { createFormContext } from "@mantine/form";
 import { SubmitHandler } from "react-hook-form";
-import { Toaster, toast } from "sonner";
+import { Toaster } from "sonner";
 // import { useForm } from "@mantine/form";
 export interface FormSubmittion {
   fullName: string;
@@ -21,45 +21,76 @@ function ContextField() {
   return (
     <>
       <TextInput
-        label="Name"
-        placeholder="Name"
+        label="Event Name"
+        placeholder="Event Name"
         withAsterisk
-        {...form.getInputProps("fullName")}
+        {...form.getInputProps("eventname")}
       />
       <TextInput
-        label="Your email"
-        placeholder="Your email"
+        label="Enter the Start Date of Event"
+        placeholder="Event Start Date"
         withAsterisk
         mt="md"
-        {...form.getInputProps("email")}
+        {...form.getInputProps("startdate")}
       />
       <TextInput
-        label="Phone Number"
+        label="Enter the Number of Player"
+        placeholder="Number of Player"
+        withAsterisk
+        mt="md"
+        {...form.getInputProps("player")}
+      />
+      <TextInput
+        label="Enter your Pize Poll"
         placeholder="Phone Number"
         withAsterisk
         mt="md"
-        {...form.getInputProps("phoneNumber")}
+        {...form.getInputProps("prizepool")}
       />
       <TextInput
-        label="Organisation Name"
+        label="Enter your Organisation Name"
         placeholder="Organisation Name"
         withAsterisk
         mt="md"
         {...form.getInputProps("organisationName")}
       />
-      <Radio.Group
-        label="Select your gender"
-        // description="This is anonymous"
+      <TextInput
+        label="Enter your Participation Fee"
+        placeholder="Participation Fee"
         withAsterisk
         mt="md"
-        {...form.getInputProps("gender")}
-      >
-        <Group mt="xs">
-          <Radio value="Male" label="Male" />
-          <Radio value="Female" label="Female" />
-          <Radio value="Other" label="Other" />
-        </Group>
-      </Radio.Group>
+        {...form.getInputProps("participationfee")}
+      />
+      <TextInput
+        label="Enter your Location"
+        placeholder="Location"
+        withAsterisk
+        mt="md"
+        {...form.getInputProps("location")}
+      />
+      <Select
+        label="Enter your Game Domain"
+        placeholder="Game Domain"
+        limit={5}
+        data={[
+          "ea-fc-24",
+          "fortnite",
+          "tekken-7",
+          "counter-strike-go",
+          "clash-royal",
+          "pubg-mobile",
+          "valorant",
+          "rocket-league",
+          "street-fighter-6",
+          "overwatch-2",
+          "brawl-stars",
+          "mobile-legends",
+          "dota-2",
+          "minecraft",
+          "fifa-23",
+        ]}
+        searchable
+      />
 
       {/* <Group justify="flex-start" mt="md"> */}
       <Button type="submit" mt={16}>
