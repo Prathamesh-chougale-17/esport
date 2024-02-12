@@ -2,6 +2,8 @@ import TiltGamesCard from "@/components/Cards/HoverCard";
 import { Games, getGames } from "@/sanity/sanity-util";
 import React from "react";
 
+export const revalidate = 600;
+
 const EventsPage = async () => {
   const games = await getGames();
   return (
